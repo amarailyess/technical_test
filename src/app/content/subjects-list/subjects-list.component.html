@@ -1,0 +1,31 @@
+<div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title ">Subjects List</h4>
+        <p *ngIf="subjectsList.length!=0" class="card-category"> ({{subjectsList.length}}) Totally subjects</p>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <div *ngIf="subjectsList.length==0" class="alert alert-warning">No subject found</div>
+          <table *ngIf="subjectsList.length!=0" class="table">                 
+            <thead class=" text-primary">
+              <th>ID </th>
+              <th>Label</th>
+              <th>Teacher</th>
+              <th>Students Number</th>
+              <th>Course</th>
+            </thead>
+            <tbody >                  
+              <tr *ngFor="let subject of subjectsList">                     
+                <td>{{subject.id}}</td>
+                <td>{{subject.label}}</td>
+                <td>{{subject.teacher}}</td>
+                <td>{{subject.studentNumber}}</td>
+                <td class="text-primary">{{subject.course}}</td>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+

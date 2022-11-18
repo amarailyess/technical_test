@@ -1,0 +1,39 @@
+<div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title ">Students List</h4>
+        <p *ngIf="studentsList.length!=0" class="card-category"> ({{studentsList.length}}) Totally students</p>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <div *ngIf="studentsList.length==0" class="alert alert-warning">No student found</div>
+          <table *ngIf="studentsList.length!=0" class="table">                 
+            <thead class=" text-primary">
+              <th>ID </th>
+              <th>Name</th>
+              <th>Birthday</th>
+              <th>Registration Number</th>
+              <th  >Course</th> 
+              <th  >Grades</th> 
+            </thead>
+            <tbody >                  
+              <tr *ngFor="let student of studentsList">                     
+                <td>{{student.id}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.birthday}}</td>
+                <td>{{student.registrationNumber}}</td>
+                <td>{{student.course}}</td>
+                <!--<td class="text-primary">.</td>-->
+                <td class="td-actions ">
+                    <button type="button"   class="btn btn-primary btn-link btn-sm"><a routerLink="/student/{{student.id}}">
+                      <i class="material-icons">visibility</i></a>
+                    </button>
+                    
+                  </td>       
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

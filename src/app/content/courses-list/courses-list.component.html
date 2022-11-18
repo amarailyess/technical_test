@@ -1,0 +1,34 @@
+<div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title ">Courses List</h4>
+        <p *ngIf="coursesList.length!=0" class="card-category"> ({{coursesList.length}}) Totally courses</p>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <div *ngIf="coursesList.length==0" class="alert alert-warning">No course found</div>
+          <table *ngIf="coursesList.length!=0" class="table">                 
+            <thead class=" text-primary">
+              <th>ID </th>
+              <th>Label</th>
+              <th>Teachers Number</th>
+              <th>Students Number</th>
+              <th>AVG Grade</th>
+              
+            </thead>
+            <tbody >                  
+              <tr *ngFor="let course of coursesList">                     
+                <td>{{course.id}}</td>
+                <td>{{course.label}}</td>
+                <td>{{course.teacherNumber}}</td>
+                <td>{{course.studentNumber}}</td>
+                <td class="text-primary">{{course.avgGrade}}</td>
+                     
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
